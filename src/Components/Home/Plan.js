@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Button, CircularProgress } from '@material-ui/core';
 
 const Plan = styled.div`
   position: relative;
@@ -88,24 +89,7 @@ export default class extends Component {
                   <dd>
                     <div className="title">{obj.title}</div>
                     <div className="content">{obj.content}</div>
-                    <a className="more" href={obj.url}>read more</a>
-                  </dd>
-                </dl>
-              )
-            })
-          }
-          {
-            this.state.list.map((obj, idx) => {
-              const imgStyle = {
-                backgroundImage: `url(${obj.img})`
-              }
-              return (
-                <dl key={idx}>
-                  <dt style={imgStyle}>圖片</dt>
-                  <dd>
-                    <div className="title">{obj.title}</div>
-                    <div className="content">{obj.content}</div>
-                    <a className="more" href={obj.url}>read more</a>
+                    <Button color="primary"><CircularProgress size="small" />Read more</Button>
                   </dd>
                 </dl>
               )

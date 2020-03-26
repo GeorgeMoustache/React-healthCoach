@@ -3,6 +3,26 @@ import OwlCarousel from 'react-owl-carousel2';
 import styled from 'styled-components';
 
 const Banner = styled.div`
+  .owl-dots {
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
+    text-align: center;
+    .owl-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      border: 1px solid #FFF;
+      border-radius: 50%;
+      &.active {
+        background: #FFF;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
   .owl-item > div {
     display: flex;
     align-items: center;
@@ -64,7 +84,7 @@ const Banner = styled.div`
 
 const options = {
   items: 1,
-  nav: true,
+  nav: false,
   dots: true,
   rewind: true,
   autoplay: true
