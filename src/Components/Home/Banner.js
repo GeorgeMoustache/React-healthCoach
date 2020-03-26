@@ -99,7 +99,8 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8151/api/home/banner')
+    const apiServerRoot = 'https://george-proxy.herokuapp.com/https://project.george-moustache.com/apiDoc/healthCoach/';
+    fetch(`${apiServerRoot}home/banner`)
       .then(res => res.json())
       .then(data => {
         const { list } = data.data;

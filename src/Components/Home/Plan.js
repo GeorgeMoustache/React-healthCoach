@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Button, CircularProgress } from '@material-ui/core';
 
+const apiServerRoot = 'https://george-proxy.herokuapp.com/https://project.george-moustache.com/apiDoc/healthCoach/'
+
 const Plan = styled.div`
   position: relative;
   margin-top: -100px;
@@ -66,7 +68,7 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8151/api/home/plan')
+    fetch(`${apiServerRoot}home/plan`)
       .then(res => res.json())
       .then(data => {
         const { list } = data.data;
